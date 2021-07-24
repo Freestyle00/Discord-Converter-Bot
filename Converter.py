@@ -53,7 +53,7 @@ class Converting:
             return "Something has gone wrong while figuring out the unit"
     def MeasurmentUStoWorld(self, number, inftydmi):
         """
-        This to convert the US measurment into
+        This is to convert the US measurment into
         something more understandable for us
         """
         inftydmi = inftydmi.lower()
