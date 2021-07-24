@@ -2,6 +2,7 @@ from dis import dis
 import Converter
 import os
 import discord
+import re as regex
 from dotenv import load_dotenv
 Con = Converter.Converting()
 load_dotenv()
@@ -17,6 +18,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    response = "Hello world"
+    if regex.search("[mMoOrRnNiNgG]$" ,message) is not None:
+        response = "Good morning to you too"
     await message.channel.send(response)
 client.run(TOKEN)
