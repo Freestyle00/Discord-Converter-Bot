@@ -79,3 +79,21 @@ class Converting:
             return f"{kilometer}km"
         else:
             return "Something has gone wrong while figuring out the unit"
+    def SpeedMPHtoKMH(self, number):
+        """
+        This is to convert the speed measurment Miles per hours,
+        into Kilometers per hour
+        """
+        #1.609344 * MPH
+        KMH = 1.609344 * number
+        KMH = round(KMH, 1)
+        return f"{number}MP/H is {KMH}KM/H"
+    def SpeedKMHtoMPH(self, number):
+        """
+        This is to convert the speed measurment Kilometers per hours,
+        into Miles per hour
+        """
+        #0.6213712 * KMH
+        MPH = 0.6213712 * number
+        MPH = round(MPH, 1)
+        return f"{number}KM/H is {MPH}MP/H"
