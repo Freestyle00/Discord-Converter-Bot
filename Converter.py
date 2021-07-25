@@ -11,7 +11,7 @@ class Converting:
         #But I hate having to much PyPi dependencies in my python code
 
         Fahrenheit = (Celsius * 1.8) + 32
-        return Fahrenheit #That was easy but now for the reverse
+        return f"{Celsius}°C is {round(Fahrenheit, 1)}"
     def TemperatureFtoC(self, Fahrenheit):
         """
         In here we convert Fahrenheit to Celsius
@@ -20,7 +20,7 @@ class Converting:
         """
         #In here it is the opposite of the Celsius formula
         #its °C = (°F − 32) / 1.8
-        Celsius = f"{Fahrenheit}°F is {float(round((Fahrenheit - 32) / 1.8, 2))}°C" #uh this is akward but appratly i had it wrong but now it is fixed
+        Celsius = f"{Fahrenheit}°F is {float(round((Fahrenheit - 32) / 1.8, 1))}°C" #uh this is akward but appratly i had it wrong but now it is fixed
         return Celsius
     def MeasurmentWorldtoUS(self, number, mmcmmkm):
         """

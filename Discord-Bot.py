@@ -21,8 +21,10 @@ async def on_message(message):
     response = ""
     if regex.search("(?i)Morning" ,str(message.content)) is not None:
         response = "Good morning to you too"
-    if regex.findall("([0-9]+)[ °]*[fF]" ,str(message.content)) != []:
-        response =  str(Con.TemperatureFtoC(int(regex.findall("([0-9]+)[ °]*[fF]" ,str(message.content))[0])))
+    if regex.findall("([-]*[0-9]+)[ °]*[fF]" ,str(message.content)) != []:
+        response =  str(Con.TemperatureFtoC(int(regex.findall("([-]*[0-9]+)[ °]*[fF]" ,str(message.content))[0])))
+    if regex.findall("([-]*[0-9]+)[ °]*[cC]" ,str(message.content)) != []:
+        response =  str(Con.TemperatureCtoF(int(regex.findall("([-]*[0-9]+)[ °]*[cC]" ,str(message.content))[0])))
     if response  ==  "" or []:
         return
     await message.channel.send(response)
