@@ -19,8 +19,8 @@ class Converting:
         This is for when your american friend says to you its 70 deegres outside (which is 21°C)        
         """
         #In here it is the opposite of the Celsius formula
-        #its °C = (°F − 32) x 1.8
-        Celsius = (Fahrenheit - 32) * 1.8
+        #its °C = (°F − 32) / 1.8
+        Celsius = f"{Fahrenheit}°F is {float(round((Fahrenheit - 32) / 1.8, 2))}°C" #uh this is akward but appratly i had it wrong but now it is fixed
         return Celsius
     def MeasurmentWorldtoUS(self, number, mmcmmkm):
         """

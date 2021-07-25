@@ -18,7 +18,12 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if regex.search("[mMoOrRnNiNgG]$" ,message) is not None:
+    response = ""
+    if regex.search("(?i)Morning" ,str(message.content)) is not None:
         response = "Good morning to you too"
+    if regex.findall("([0-9]+)[ °]*[fF]" ,str(message.content)) != []:
+        response =  str(Con.TemperatureFtoC(int(regex.findall("([0-9]+)[ °]*[fF]" ,str(message.content))[0])))
+    if response  ==  "" or []:
+        return
     await message.channel.send(response)
 client.run(TOKEN)
