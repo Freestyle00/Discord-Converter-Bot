@@ -11,7 +11,7 @@ class Converting:
         #But I hate having to much PyPi dependencies in my python code
 
         Fahrenheit = (Celsius * 1.8) + 32
-        return f"{Celsius}°C is {round(Fahrenheit, 1)}"
+        return f"{Celsius}°C is {round(Fahrenheit, 1)}°F"
     def TemperatureFtoC(self, Fahrenheit):
         """
         In here we convert Fahrenheit to Celsius
@@ -32,25 +32,25 @@ class Converting:
             # mm × 0.039370078740157 = inch 
             inch = number * 0.039370078740157
             inch = round(inch, 3)
-            return f"{inch}in"
+            return f"{number}mm is {inch}in"
         elif mmcmmkm == "cm": #foot
             # cm * 0.032808 = foot
             foot = number * 0.032808
             foot = round(foot, 3)
-            return f"{foot}ft"
+            return f"{number}cm is {foot}ft"
         elif mmcmmkm == "m": #yard
             # m * 1.093613
             yard = number * 1.093613
             yard = round(yard, 3)
-            return f"{yard}yd"
+            return f"{number}m is {yard}yd"
         elif mmcmmkm == "km": #mile
             # km * 0.6213712
             mile = number * 0.6213712
             mile = round(mile, 3)
-            return f"{mile}mi"
+            return f"{number}km is {mile}mi"
         else:
             #raise Exception("Something has gone wrong please check if statements")
-            return "Something has gone wrong while figuring out the unit"
+            return False
     def MeasurmentUStoWorld(self, number, inftydmi):
         """
         This is to convert the US measurment into
@@ -61,24 +61,24 @@ class Converting:
             # inch * 25.4
             milimeter = number * 25.4
             milimeter = round(milimeter, 3)
-            return f"{milimeter}mm"
-        elif inftydmi == "ft":
+            return f"{number}in is {milimeter}mm"
+        elif inftydmi == "ft" or inftydmi == "fe":
             # feet * 30.48
             centimeter = number * 30.48
             centimeter = round(centimeter, 3)
-            return f"{centimeter}cm"
-        elif inftydmi == "yd":
+            return f"{number}ft is {centimeter}cm"
+        elif inftydmi == "yd" or inftydmi == "ya":
             # yard * 0.9144
             meter = number * 0.9144
             meter = round(meter, 3)
-            return f"{meter}m"
+            return f"{number}yd is {meter}m"
         elif inftydmi == "mi":
             # mile * 1.609344
             kilometer = number * 1.609344
             kilometer = round(kilometer, 3)
-            return f"{kilometer}km"
+            return f"{number}mi is {kilometer}km"
         else:
-            return "Something has gone wrong while figuring out the unit"
+            return False
     def SpeedMPHtoKMH(self, number):
         """
         This is to convert the speed measurment Miles per hours,
